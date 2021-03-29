@@ -11,7 +11,7 @@ if ($result = mysqli_query($conn,$sql)) {
 
 if($result){
 	echo "<script type='text/javascript'>";
-	echo "alert('Delete Succesfuly');";
+	echo "alert('Delete Successfully');";
 	echo "window.location = 'admin_manage-menu.php'; ";
 	echo "</script>";
 	}

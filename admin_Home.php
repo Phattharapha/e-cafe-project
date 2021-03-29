@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,7 +60,7 @@
                     <li class="nav-item"><a href="admin_manage-menu.php" class="nav-link">Menu</a></li>
                     <li class="nav-item"><a href="admin_manage-user.php" class="nav-link">User</a></li>
 
-                    <li class="nav-item"><a href="#" class="nav-link" style="color:#f0747a;">Log-out</a></li>
+                    <li class="nav-item"><a href="Logout.php" class="nav-link" style="color:#f0747a;">Logout</a></li>
 
                 </ul>
             </div>

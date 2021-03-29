@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION["table_id"])){
+  echo "<script type='text/javascript'>";
+  echo "alert('Unauthorized');";
+  echo "window.location = 'Home-login.php'; ";
+  echo "</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,33 +15,34 @@
   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="template/vegefoods/css/open-iconic-bootstrap.min.css"> -->
-    <link href="css/bootstrap-4.3.1.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="template/vegefoods/css/animate.css">
-    
-    <link rel="stylesheet" href="template/vegefoods/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="template/vegefoods/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="template/vegefoods/css/magnific-popup.css">
+     <!--  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;300&display=swap" rel="stylesheet">   <!--new-->
+		<!-- <link rel="stylesheet" href="template/vegefoods/css/open-iconic-bootstrap.min.css"> -->
+		<link href="css/bootstrap-4.3.1.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="template/vegefoods/css/animate.css">
 
-    <link rel="stylesheet" href="template/vegefoods/css/aos.css">
+		<link rel="stylesheet" href="template/vegefoods/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="template/vegefoods/css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="template/vegefoods/css/magnific-popup.css">
 
-    <link rel="stylesheet" href="template/vegefoods/css/ionicons.min.css">
+		<link rel="stylesheet" href="template/vegefoods/css/aos.css">
 
-    <link rel="stylesheet" href="template/vegefoods/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="template/vegefoods/css/jquery.timepicker.css">
+		<link rel="stylesheet" href="template/vegefoods/css/ionicons.min.css">
 
-    
-    <link rel="stylesheet" href="template/vegefoods/css/flaticon.css">
-    <link rel="stylesheet" href="template/vegefoods/css/icomoon.css">
-    <link rel="stylesheet" href="template/vegefoods/css/style.css">
-    <style type="text/css">
-    body,td,th {
-    font-family: Poppins, Arial, sans-serif;
-}
-    </style>
+		<link rel="stylesheet" href="template/vegefoods/css/bootstrap-datepicker.css">
+		<link rel="stylesheet" href="template/vegefoods/css/jquery.timepicker.css">
+
+
+		<link rel="stylesheet" href="template/vegefoods/css/flaticon.css">
+		<link rel="stylesheet" href="template/vegefoods/css/icomoon.css">
+		<link rel="stylesheet" href="template/vegefoods/css/style.css">
+		<style type="text/css">
+			font {
+				font-family: 'Prompt', promptextralight, sans-serif;  
+			}
+		</style>
 </head>
   <body class="goto-here">
 		<div class="py-1 bg-primary">
@@ -71,14 +81,16 @@
             </li>
 	  <!--        <li class="nav-item"><a href="template/vegefoods/about.html" class="nav-link">About</a></li>				-->
 	          <li class="nav-item"><a href="Status.php" class="nav-link">Status</a></li>
-	          <li class="nav-item"><a href="Order.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link" style="color:#f0747a">Log-out</a></li>																												   
+	          <li class="nav-item"><a href="Order.php" class="nav-link"><span class="icon-shopping_cart"></span></a></li>
+	          <li class="nav-item"><a href="Logout.php" class="nav-link" style="color:#f0747a">Logout</a></li>																												   
 
 	        </ul>
 	      </div>
       </div>
 	  </nav>
     <!-- END nav -->
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
   <!--    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
       <div class="container">
@@ -97,200 +109,46 @@
 	$row = $result->fetch_assoc();
 
 	?>
-    <section class="ftco-section">
+    <section style="Margin-top: 60px;">
+	<form action="Addcart.php" method="POST">
     	<div class="container">
-    		<div class="row">
-    			<div class="col-lg-6 mb-5 ftco-animate">
-    				<a href="images/drink_1.jpg" class="image-popup"><img src="./image1/<?= $row["picture"] ?>" alt="Colorlib Template" width="350" class="img-fluid"></a>
+    		<div class="row text-center">
+    			<div class="col-lg-6 ftco-animate">
+    				<a href="./image1/<?= $row["picture"] ?>" class="image-popup"><img src="./image1/<?= $row["picture"] ?>" alt="Colorlib Template" width="350" class="img-fluid"></a>
     			</div>
+				<input type="text" name="proid" style="display:none" value="<?=$_GET["pro_id"]?>">
     			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
     				<h3><?=$row["pro_name"]?></h3>
     				<div class="rating d-flex">
-		<!--					<p class="text-left mr-4">
-								<a href="#" class="mr-2">5.0</a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-							</p> 
-							<p class="text-left mr-4">
-								<a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Rating</span></a>
-							</p>
-							<p class="text-left">
-								<a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
-							</p>																	-->
+		
 						</div>
     				<p class="price"><span><?=$row["pro_price"]?></span></p>
-    				<p> ชานมไข่มุกสูตรพิเศษสำหรับคุณ
+    				<p> <?=$row["Description"]?>
 						</p>
-						<div class="row mt-4">
-							<div class="col-md-6">
-			<!--					<div class="form-group d-flex">
-		              <div class="select-wrap">
-	                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                  <select name="" id="" class="form-control">
-	                  	<option value="">Small</option>
-	                    <option value="">Medium</option>
-	                    <option value="">Large</option>
-	                    <option value="">Extra Large</option>
-	                  </select>
-	                </div>
-		            </div>									-->
-							</div>
+						<div class="mt-4 text-center">
+											
 							<div class="w-100"></div>
-							<div class="input-group col-md-6 d-flex mb-3">
-	             	<span class="input-group-btn mr-2">
-	                	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
-	                   <i class="ion-ios-remove"></i>
-	                	</button>
-	            		</span>
-	             	<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
-	             	<span class="input-group-btn ml-2">
-	                	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
-	                     <i class="ion-ios-add"></i>
-	                 </button>
-	             	</span>
-	          	</div>
-	          	<div class="w-100"></div>
-	       <!--   	<div class="col-md-12">
-	          		<p style="color: #000;">600 kg available</p>
-	          	</div>														-->
-          	</div>
-          	<p><a href="Order.html" class="btn py-3 px-2 btn-success">Add to Order</a></p>
-    			</div>
-    		</div>
-    	</div>
+								<div class="input-group d-flex mb-2 text-center">
+										<span class="input-group-btn mr-2">
+											<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
+											<i class="ion-ios-remove"></i>
+											</button>
+										</span>
+									<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+										<span class="input-group-btn ml-2">
+											<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+											<i class="ion-ios-add"></i>
+											</button>
+										</span>
+								</div>
+							<br>
+								<button class="bnt btn-light" type="submit">Add to Order</button>
+
+							</div>
+    					</div>
+		</div>
+		</form>
     </section>
-<!--
-    <section class="ftco-section">
-    	<div class="container">
-				<div class="row justify-content-center mb-3 pb-3">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading">Products</span>
-            <h2 class="mb-4">Related Products</h2>
-</div>
-        </div>   		
-    	</div>
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="template/vegefoods/images/product-1.jpg" alt="Colorlib Template">
-    						<span class="status">30%</span>
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Bell Pepper</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
-		    					</div>
-	    					</div>
-	    					<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="template/vegefoods/images/product-2.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Strawberry</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span>$120.00</span></p>
-		    					</div>
-	    					</div>
-    						<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="template/vegefoods/images/product-3.jpg" alt="Colorlib Template">
-	    					<div class="overlay"></div>
-	    				</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Green Beans</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span>$120.00</span></p>
-		    					</div>
-	    					</div>
-    						<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
-    				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="template/vegefoods/images/product-4.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Purple Cabbage</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span>$120.00</span></p>
-		    					</div>
-	    					</div>
-    						<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </section>
--->
 
 
   

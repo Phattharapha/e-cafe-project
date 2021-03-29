@@ -19,7 +19,7 @@ if ($result = mysqli_query($conn,$sql)) {
 
 if($result){
 echo "<script type='text/javascript'>";
-echo "alert('Update Succesfuly');";
+echo "alert('Update Successfully');";
 echo "window.location = 'admin_manage-table.php'; ";
 echo "</script>";
 }
