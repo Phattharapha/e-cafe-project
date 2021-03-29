@@ -7,10 +7,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;300&display=swap" rel="stylesheet">   <!--new-->
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
   <!-- <link rel="stylesheet" href="template/vegefoods/css/open-iconic-bootstrap.min.css"> -->
   <link href="css/bootstrap-4.3.1.css" rel="stylesheet" type="text/css">
   <link href="css/login.css" rel="stylesheet" type="text/css">
@@ -32,8 +31,10 @@
   <link rel="stylesheet" href="template/vegefoods/css/icomoon.css">
   <link rel="stylesheet" href="template/vegefoods/css/style.css">
   <style type="text/css">
-    FONT{
-      font-family: 'Prompt', promptextralight, sans-serif;     
+    body,
+    td,
+    th {
+      font-family: Poppins, Arial, sans-serif;
     }
   </style>
 </head>
@@ -66,7 +67,8 @@
 
               <form class="modal-content animate" action="loginconnect.php" method="get" style="width:350px;">
                 <div class="imgcontainer">
-                
+                  <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+                  <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span> -->
                   <img src="images/logo.jpg" class="img-thumbnail img-fluid" alt="Placeholder image" width="100px" height="100px">
                 </div>
 
@@ -155,7 +157,7 @@
       </div>
     </div>
   </section>        -->
-  
+
   <section class="ftco-section ftco-category ftco-no-pt">
 
 
@@ -179,7 +181,7 @@
                 <div class="text text-center">
                   <h1>Recommend</h1>
                   <p>Sweet is Life</p>
-
+                  <!-- <p><a href="#" class="btn btn-primary">Order now</a></p> -->
                 </div>
               </div>
             </div>

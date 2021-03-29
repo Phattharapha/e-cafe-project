@@ -28,13 +28,13 @@ if ($result = mysqli_query($conn,$sql)) {
 
 	if($result){
 		echo "<script type='text/javascript'>";
-		echo "alert('Update Succesfuly');";
+		echo "alert('Edit Successfully');";
 		echo "window.location = 'admin_manage-user.php'; ";
 		echo "</script>";
 		}
 		else{
 		echo "<script type='text/javascript'>";
-		echo "alert('Error back to Update again');";
+		echo "alert('Error back to Edit again');";
 			echo "window.location = 'admin_manage-user.php'; ";
 		echo "</script>";}
 ?>

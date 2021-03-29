@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,11 +56,11 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="admin_Home.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="admin_Home.php" class="nav-link">Home</a></li>
 
                     <li class="nav-item"><a href="admin_manage-menu.php" class="nav-link">Menu</a></li>
                     <li class="nav-item cta cta-colored"><a href="admin_manage-user.php" class="nav-link" style="color:#FFFFFF; background-color: #82AE46"><strong>User</strong></a></li>
-                    <li class="nav-item"><a href="template/vegefoods/blog.html" class="nav-link" style="color:#f0747a;">Log-out</a></li>
+                    <li class="nav-item"><a href="Logout.php" class="nav-link" style="color:#f0747a;">Logout</a></li>
 
                 </ul>
             </div>
@@ -70,79 +71,73 @@
 
     <section class="testimony-section embed-responsive-item">
 
-        <div class="row d-flex justify-content-center" style="overflow-x:auto;">
+        <div class=" d-flex justify-content-center">
 
-            <div class="block-22" >
+            <div class="container" >
 
-            <br>
+                <br>
                 <div class="d-flex justify-content-center">
-                    <p class="h5 text-primary createShowP">
-                        <h2>Choose </h2>
-                    </p>
-                    <p> </p>
+                    <!-- <p class="h5 text-primary createShowP"> -->
+                        <h3>Choose&ensp;</h3>
+                     <!-- </p> -->
                     <div class="dropdown show">
                         <a class="btn btn-lg dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #A4E6E8"> Employee	 </a>
                         <div class="dropdown-menu">
                             <!--<a class="dropdown-item" href="#">Employee</a> -->
                             <a class="dropdown-item" href="admin_manage-table.php">Table</a>
-                            <!--			  
-			     <h6 class="dropdown-header">Category</h6>
-			     <a class="dropdown-item" href="#">First Link</a> <a class="dropdown-item disabled" href="#" >Disabled Link</a> <a class="dropdown-item" href="#">Something else here</a>
-			     <div class="dropdown-divider"></div>
-			     <a class="dropdown-item" href="#">Seperated Link</a> -->
+                            
                         </div>
                     </div>
                 </div>
 
                 <br>
 
-                <table class="table-responsive-sm " width="100%" style="align-content: center">
-                    <tr class="text-center">
+                <table class="text-center" width="100%" style="align-content: center">
+                    <tr >
                         <th>&ensp;</th>
                         <th>
-                            <h2>Employee <button type="button" class="btn btn-info" data-toggle="modal" data-target="#tbModal">Add</button>
-                            </h2>
+                            <h3>Employee <button type="button" class="btn btn-info" data-toggle="modal" data-target="#tbModal">Add</button>
+                            </h3>
                             <!--Start Forms-->
                       
                             <div class="modal" id="tbModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header ">
-                                            <h4 class="modal-title w-100 font-weight-bold">Add Employee</h4>
+                                            <h4 class="modal-title w-100 font-weight-bold text-center">Add Employee</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										  <span aria-hidden="true">&times;</span>
 										</button>
                                         </div>
                                         <form action="AdminEmp.php" method="POST">
-                                        <div class="modal-body mx-3" style="margin-left: 10px; margin-right: 10px;">
+                                        <div class="modal-body mx-3 " style="margin-left: 10px; margin-right: 10px;">
                                             <div class="md-form mb-3 text-center">
                                             <label data-error="wrong" data-success="right" for="form34" style="color: #000000">Status</label> <span style="color: #FF0004">  *  </span> &ensp;
-                                            <br>
-                                            <select class="btn btn-primary dropdown-toggle" name="statusemp">
-                                  
-                                        <option type="text">Admin</option>
-                                        <option type="text">Waiter</option>
-                                        </select></div>
-                                               
-
-                                            </div>
+                                            
+                                                <select class="btn btn-primary dropdown-toggle" name="statusemp">
+                                                    <option type="text">Admin</option>
+                                                    <option type="text">Waiter</option>
+                                                </select>
+                                            </div> 
+                                        </div>
+                                        
                                             <input type="text" name="empid" style="display:none">
 
-                                            <div class="md-form mb-3" style="margin-left: 10px; margin-right: 10px;">
+                                            <div class="md-form mb-3 text-left" style="margin-left: 20px; margin-right: 20px;">
                                                 <i class="fas fa-user prefix grey-text"></i>
                                                 <label data-error="wrong" data-success="right" for="form34" style="color: #000000">Name</label> <span style="color: #FF0004">  *  </span> &ensp;
 
                                                 <input type="text"  name="empname" id="txt_name" class="form-control validate" data-type="input-textbox" class="form-textbox validate[required]" size="50" value="" data-component="textbox" aria-labelledby="txt_name" required="">
                                             </div>
 
-                                            <div class="md-form mb-3">
+                                            <div class="md-form mb-3 text-left"style="margin-left: 20px; margin-right: 20px;">
                                                 <label data-error="wrong" data-success="right" for="form34" style="color: #000000">ID Card</label>
                                                 <span style="color: #FF0004">  *  </span> &ensp;
                                                 <br>
                                                 <input type="numbet" name="idcardemp" id="id_card" style="width:200px" size="10" value="" data-numbermin="1" data-numbermax="999" data-component="number" aria-labelledby="label_15" required="" step="any">
                                             </div>
 
-                                            <div class="md-form mb-3">
+                                            <div class="md-form mb-3 text-left" style="margin-left: 20px; margin-right: 20px;">
 
                                                 <label style="color: #000000"> Phone Number </label> <span style="color: #FF0004">  *  </span> &ensp;
 
@@ -154,7 +149,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="md-form mb-3">
+                                            <div class="md-form mb-3 text-left" style="margin-left: 20px; margin-right: 20px;">
 
                                                 <label style="color: #000000"> Birth Date </label> <span style="color: #FF0004">  *  </span> &ensp; <br>
 
@@ -162,21 +157,21 @@
 
                                             </div>
 
-                                            <div class="md-form mb-3" style="margin-left: 10px; margin-right: 10px;">
+                                            <div class="md-form mb-3 text-left" style="margin-left: 20px; margin-right: 20px;">
                                                 <label style="color: #000000"> Address </label> <span style="color: #FF0004">  *  </span> &ensp; <br>
                                                 <textarea type="text" name="addressemp" id="form8" class="md-textarea form-control" rows="3"></textarea>
 
                                             </div>
 
-                                            <div class="md-form mb-3">
+                                            <div class="md-form mb-3 text-left" style="margin-left: 20px; margin-right: 20px;">
 
-                                                <label style="color: #000000"> Strt Date </label> <span style="color: #FF0004">  *  </span> &ensp; <br>
+                                                <label style="color: #000000"> Start Date </label> <span style="color: #FF0004">  *  </span> &ensp; <br>
 
                                                 <input type="date" class="icon-date_range" name="startdateemp">
 
                                             </div>
 
-                                            <div class="md-form mb-3" style="margin-left: 10px; margin-right: 10px;">
+                                            <div class="md-form mb-3 text-left" style="margin-left: 20px; margin-right: 20px;">
                                                 <i class="fas fa-user prefix grey-text"></i>
                                                 <label data-error="wrong" data-success="right" for="form34" style="color: #000000">Login Name</label> <span style="color: #FF0004">  *  </span> &ensp;
 
@@ -184,7 +179,7 @@
                                             </div>
 
 
-                                            <div class="md-form mb-3" style="margin-left: 10px; margin-right: 10px;">
+                                            <div class="md-form mb-3 text-left" style="margin-left: 20px; margin-right: 20px;">
                                                 <i class="fas fa-user prefix grey-text"></i>
                                                 <label data-error="wrong" data-success="right" for="form34" style="color: #000000">Password</label> <span style="color: #FF0004">  *  </span> &ensp;
 
@@ -229,18 +224,11 @@
                                         <thead>
 
                                             <tr>
-                                                <th class="th-sm text-center">ID
+                                                <th class="th-sm text-center">ID</th>
 
-                                                </th>
+                                                <th class="th-sm text-center"  width="120px">Name</th>
 
-                                                <th class="th-sm text-center">Name
-
-                                                </th>
-
-                                                <th class="th-sm text-center">Manage
-
-
-                                                </th>
+                                                <th class="th-sm text-center">Manage</th>
                                             </tr>
                                         </thead>
                             <form>
@@ -282,7 +270,7 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="tableemp_edit">Edit</h5>
+                                        <h4 class="modal-title w-100 font-weight-bold text-center" id="tableemp_edit">Edit</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                         </button>
@@ -290,6 +278,8 @@
                                     <div class="modal-body" size="">
                                     <div class="md-form mb-3">
                                    <div class="text-center">
+                                   <label data-error="wrong" data-success="right" for="form34" style="color: #000000">Status</label> <span style="color: #FF0004">  *  </span> &ensp;
+
                                             <select class="btn btn-primary dropdown-toggle" name="statusemp" id="statusemp">
                                         <!-- <option selected>Status</option> -->
                                         <option type="text">Admin</option>
@@ -300,14 +290,14 @@
                                             </div>
                                             <input type="text" name="empid" id="empid" style="display:none">
 
-                                            <div class="md-form mb-3" style="margin-left: 10px; margin-right: 10px;">
+                                            <div class="md-form mb-3">
                                                 <i class="fas fa-user prefix grey-text"></i>
                                                 <label data-error="wrong" data-success="right" for="form34" style="color: #000000">Name</label> <span style="color: #FF0004">  *  </span> &ensp;
 
                                                 <input type="text"  name="empname" id="empname" class="form-control validate" data-type="input-textbox" class="form-textbox validate[required]" size="50" value="" data-component="textbox" aria-labelledby="txt_name" required="">
                                             </div>
 
-                                            <div class="md-form mb-3">
+                                            <div class="md-form mb-3" >
                                                 <label data-error="wrong" data-success="right" for="form34" style="color: #000000">ID Card</label>
                                                 <span style="color: #FF0004">  *  </span> &ensp;
                                                 <br>
@@ -334,7 +324,7 @@
 
                                             </div>
 
-                                            <div class="md-form mb-3" style="margin-left: 10px; margin-right: 10px;">
+                                            <div class="md-form mb-3">
                                                 <label style="color: #000000"> Address </label> <span style="color: #FF0004">  *  </span> &ensp; <br>
                                                 <textarea type="text" id="addressemp" name="addressemp"  class="md-textarea form-control" rows="3"></textarea>
 
@@ -342,13 +332,13 @@
 
                                             <div class="md-form mb-3">
 
-                                                <label style="color: #000000"> Strt Date </label> <span style="color: #FF0004">  *  </span> &ensp; <br>
+                                                <label style="color: #000000"> Start Date </label> <span style="color: #FF0004">  *  </span> &ensp; <br>
 
                                                 <input type="date" class="icon-date_range" id="startdateemp" name="startdateemp">
 
                                             </div>
 
-                                            <div class="md-form mb-3" style="margin-left: 10px; margin-right: 10px;">
+                                            <div class="md-form mb-3">
                                                 <i class="fas fa-user prefix grey-text"></i>
                                                 <label data-error="wrong" data-success="right" for="form34" style="color: #000000">Login Name</label> <span style="color: #FF0004">  *  </span> &ensp;
 
@@ -356,7 +346,7 @@
                                             </div>
 
 
-                                            <div class="md-form mb-3" style="margin-left: 10px; margin-right: 10px;">
+                                            <div class="md-form mb-3">
                                                 <i class="fas fa-user prefix grey-text"></i>
                                                 <label data-error="wrong" data-success="right" for="form34" style="color: #000000">Password</label> <span style="color: #FF0004">  *  </span> &ensp;
 
@@ -368,8 +358,9 @@
                   
                                 </div>
                                         <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                            <button type="submit" class="btn btn-success">Save</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        
                                         </div>
                                     </div>
                                     </div>
@@ -395,18 +386,19 @@
                       <form action ="DeleteUser.php" method="POST">
                         <div class="modal-header">
                         <input type="text" id="empid1" name="empid" style="display:none;" >
-                          <h5 class="modal-title" id="tableemp_del">Delete</h5>
+                          <h5 class="modal-title" id="tableemp_del">Delete User</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
                         <div class="modal-body">
-                          ต้องการยืนยันการลบหรือไม่ ?
+                          Are you sure you want to delete this User  ?
                         </div>
 
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                          <button type="sumbit" class="btn btn-danger">ยืนยัน</button>
+                            <button type="sumbit" class="btn btn-success">Submit</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                          
                         </div>
                         </form>
                       </div>

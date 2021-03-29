@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,7 +60,7 @@
 
                     <li class="nav-item"><a href="admin_manage-menu.php" class="nav-link">Menu</a></li>
                     <li class="nav-item cta cta-colored"><a href="admin_manage-user.php" class="nav-link" style="color:#FFFFFF; background-color: #82AE46"><strong>User</strong></a></li>
-                    <li class="nav-item"><a href="#" class="nav-link" style="color:#f0747a;">Log-out</a></li>
+                    <li class="nav-item"><a href="Logout.php" class="nav-link" style="color:#f0747a;">Logout</a></li>
 
                 </ul>
             </div>
@@ -70,17 +71,16 @@
 
     <section class="testimony-section embed-responsive-item">
 
-        <div class="row d-flex justify-content-center" style="overflow-x:auto;">
+        <div class=" d-flex justify-content-center" style="overflow-x:auto;">
 
-            <div class="block-22">
+            <div>
 
             <br>
 
             <div class="d-flex justify-content-center">
                     <p class="h5 text-primary createShowP">
-                        <h2>Choose </h2>
+                        <h2>Choose &ensp;</h2>
                     </p>
-                    <p> </p>
                     <div class="dropdown show">
                         <a class="btn btn-lg dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #A4E6E8"> Table	 </a>
                         <div class="dropdown-menu">
@@ -97,13 +97,14 @@
 
 
 
-                <table class="table-responsive-sm " width="100%" style="align-content: center">
-                    <tr class="text-center">
+                <table class="text-center " width="100%" style="align-content: center">
+                    <tr>
                         <th>&ensp;</th>
                        
                         <th>
                             <h2>Table <button type="button" class="btn btn-info" data-toggle="modal" data-target="#empModal">Add</button>
 </h2>  
+<br>
                             <!--Start Forms !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
                             <div class="modal" id="empModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -115,17 +116,12 @@
 										  <span aria-hidden="true">&times;</span>
 										</button>
                                         </div>
+                                       
                                         <form action="Adminaddtable.php" method="POST">
-                                            <div class="modal-body mx-3">
+                                            <div class="modal-body mx-3 text-left">
 
-                                                <!-- <div class="md-form mb-3">
-                                                <i class="fas fa-user prefix grey-text"></i>
-                                                <label data-erro="wrong" data-success="right" for="form34" style="color: #000000" name="tablename">Table Name</label> <span style="color: #FF0004">  *  </span> &ensp;
 
-                                                <input type="text" id="txt_name" class="form-control validate" data-type="input-textbox" class="form-textbox validate[required]" size="50" value="" data-component="textbox" aria-labelledby="txt_name" required="">
-                                             </div> -->
-
-                                                <div class="md-form mb-3">
+                                                <div class="md-form mb-3 ">
                                                     <label data-error="wrong" data-success="right" for="form34" style="color: #000000">Seat Amount</label>
                                                     <span style="color: #FF0004">  *  </span> &ensp;
                                                     <br>
@@ -179,7 +175,7 @@
         </div> -->
 
         <form>
-                <table id="dtBasicExample" class="table-responsive-m table-striped table-bordered" cellspacing="0" width="100%">
+                <table id="dtBasicExample" class="table-striped table-bordered" cellspacing="0" width="100%" style="margin-left: 10px; margin-right: 10px;">
                                         <thead>
 
                                             <tr>
@@ -239,13 +235,13 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="table_edit">Edit</h5>
+                                    <h4 class="modal-title w-100 font-weight-bold text-center">Edit</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body" size="">
-                                    <div class="md-form mb-3">
+                                    <div class="modal-body">
+                                    <div class="md-form mb-3" >
                                     <input type="text" id="tableid" name="tableid" style ="display:none">
                                                     <label data-error="wrong" data-success="right" for="form34" style="color: #000000">Seat Amount</label>
                                                     <span style="color: #FF0004">  *  </span> &ensp;
@@ -270,8 +266,9 @@
 
 
                                         <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                            <button type="submit" class="btn btn-success">Save</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            
                                         </div>
                                     </div>
                                     </div>
@@ -290,17 +287,18 @@
                                 <form action ="DeleteTable.php" method="POST">
                                     <div class="modal-header">
                                         <input type="text" id="tableid1" name="tableid" style="display:none" >
-                                    <h5 class="modal-title" id="table_del">Delete</h5>
+                                    <h5 class="modal-title" id="table_del">Delete Table</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                     </div>
                                     <div class="modal-body">
-                                    ต้องการยืนยันการลบหรือไม่ ?
+                                    Are you sure you want to delete this Table  ?
                                     </div>
                                     <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                                    <button type="sumbit" class="btn btn-danger">ยืนยัน</button>
+                                        <button type="sumbit" class="btn btn-success">Submit</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        
                                     </div>
                                     </form>
                                 </div>
